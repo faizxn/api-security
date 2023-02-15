@@ -1,0 +1,49 @@
+
+
+
+#NMAP#
+
+nmap -sC -sV [target address or network range] -oA nameofoutput
+nmap -sV --script=http-enum <target> -p 80,443,8000,8080
+
+
+#OWASP Amass#
+
+amass enum -list 
+	curl https://raw.githubusercontent.com/OWASP/Amass/master/examples/config.ini >~/.config/amass/config.ini
+	nano ~/.config/amass/config.ini
+
+amass enum -active -d target-name.com |grep api
+amass intel -addr [target IP addresses]
+amass intel -d [target domain] –whois
+
+amass enum -passive -d [target domain]
+amass enum -active -d [target domain]
+ 
+amass enum -active -brute -w /usr/share/wordlists/API_superlist -d [target domain] -dir [directory name]
+ 
+ 
+#Gobuster#
+
+gobuster dir -u target-name.com:8000 -w /home/hapihacker/api/wordlists/common_apis_160
+gobuster dir -u target-name.com:8000 -w /usr/share/wordlists/api_list/common_apis_160 -x 200,202,301 -b 302
+
+
+
+#Kiterunner#
+
+kr scan http://127.0.0.1 -w ~/api/wordlists/data/kiterunner/routes-large.kite
+kr brute http://127.0.0.1 -w ~/api/wordlists/data/automated/nameofwordlist.txt
+kr kb replay "GET 414 [183, 7, 8]://127.0.0.1:8888/api/privatisations/count 0cf6841b1e7ac8badc6e237ab300a90ca873d571" -w ~/api/wordlists/data/kiterunner/routes-large.kite
+
+
+#DevTools#
+
+
+
+
+
+____________________________Reverse Engineering
+
+
+
