@@ -1,0 +1,33 @@
+
+#Endpoint Analysis#
+
+	#Reverse Engineering an API#
+	
+		Way#1:
+		
+		create new collection under workspace, click capture requests (bottom) options. 
+		enabled proxied to 5555, click save options requests and set domain name at URL must contain.  
+
+		observe traffics while browse the website. after done, stop and "add to collection" with domain name and endpoint 
+		and create folder under domain url. categories the domain.
+
+
+		Way#2
+	
+		mitmweb					||start mtimweb
+		127.0.0.1:8081 			||open the url with port config proxfoxy		
+		127.0.0.1:8888			||browse the application and check mitmweb to capture traffic
+			
+		stop capturing and save the file 
+		
+		mitmproxy2swagger -i /Downloadf,flows -o spec.yml -p http://crapi.apisec.ai -f flow --examples
+		mitmproxy2swagger -i /Downloadf,flows -o spec.yml -p http://127.0.0.1	    -f flow --examples
+		
+		upload the (spec.yml)file to https://editor.swagger.io
+
+
+
+
+	# open swagger files to POSTMAN and login using user-credential. set token at TOP of the collection. so that entire session enabled. 
+		send request to show response
+			if any anymaly is observed then send it to BrupSuite.
