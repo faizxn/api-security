@@ -1,4 +1,14 @@
 
+++ In the current state of API security, which vulnerability do automated scanners detect?
+	-API7:2019 Security Misconfiguration
+
+++ Which of the following fall under API7:2019 Security Misconfiguration?
+	-Verbose Error Messages
+	-Transport Layer Security is weak or missing
+	-Missing security patches
+	-Cross-Origin Resource Sharing policy is missing
+
+
 #Scanning API#
 
 	#Finding Security Misconfigurations#
