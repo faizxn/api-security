@@ -1,1 +1,29 @@
 
+	#Classical Authentication Attacks# 
+	
+		its like brute-force and password spraying. to perfrom the attack, need to leverage the information revealed in an excessive data exposure vulnerability.
+		the excess data could reveal technical details about the users account like user is using multifactor authentication.
+
+		https://github.com/sc0tfree/mentalist
+		https://github.com/Mebus/cupp
+		https://github.com/rockyou.txt
+
+		wfuzz -d '{"email":"a@email.com","password":"FUZZ"}' -H 'Content-Type: application/json' -z file,/usr/share/wordlists/rockyou.txt -u http://127.0.0.1:8888/identity/api/auth/login --hc 405
+
+	
+	#API Token Attacks#
+  
+		many security controls could prevent you from successfully brute-forcing an API authentication. a technique called "Password Spraying" that can evade.
+		
+		collection username or email address from post-comment which is "excessive-data-exposure"
+				
+		save the response (below save to file) of post-comment and other targeted files and filter email address using grep
+				grep -oe "[a-zA-Z0-9._]\+@[a-zA-Z]\+.[a-zA-Z]\+" response.json
+		
+			
+	#Note on Base64 Encoding#
+	
+		some APIs will base64-encode authentication payloads sent in an API request.
+    
+    
+    
