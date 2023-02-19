@@ -39,11 +39,7 @@ kr kb replay "GET 414 [183, 7, 8]://127.0.0.1:8888/api/privatisations/count 0cf6
 
 #DevTools#
 
-
-
-
-
-____________________________Reverse Engineering
+check the console/network into the browser.. 
 
 
 
