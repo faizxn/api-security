@@ -1,0 +1,20 @@
+
+#Scanning API#
+
+	#Finding Security Misconfigurations#
+	
+	nikto -h http://crapi.apisec.ai
+	
+	owasp zap -> automated scan
+	
+	owasp zap -> manual scan
+				login to applcation
+				change and update accrodingly  ->active scan afterward
+				
+			# check alert -> find issue carefully 
+			# progess -> below taskbar check active scan and see progess
+			
+	
+	->do the same thing scaning things with brup
+	
+				
