@@ -1,1 +1,16 @@
 
+# Improper Assets Management vulnerability primarily involves what?
+      -Exposed and unsupported API versions
+    
+#  Which of the following are methods used for API versioning?
+      -Request parameters
+      -Request Headers
+      -URL path
+
+# Which security controls would have helped reduce the risk of the crAPI Improper Assets Management vulnerability?
+      -Implementing rate limiting
+      -Developers keep an updated inventory of the API
+      -Developers decommissioning old versions of the API
+      -Developers reducing MFA attempts across all versions
+
+
