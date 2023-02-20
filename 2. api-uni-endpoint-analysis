@@ -20,7 +20,10 @@
 			
 		stop capturing and save the file 
 		
-		mitmproxy2swagger -i /Downloadf,flows -o spec.yml -p http://crapi.apisec.ai -f flow --examples
+		mitmproxy2swagger -i /Downloadf,flows -o spec.yml -p http://crapi.apisec.ai -f flow 
+		
+		[open the spec.yml files then remove only <:ignore> and other irreverent lines, save the files and run below command with --examples]
+		
 		mitmproxy2swagger -i /Downloadf,flows -o spec.yml -p http://127.0.0.1	    -f flow --examples
 		
 		upload the (spec.yml)file to https://editor.swagger.io
