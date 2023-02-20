@@ -22,6 +22,7 @@
 		
 		mitmproxy2swagger -i /Downloadf,flows -o spec.yml -p http://crapi.apisec.ai -f flow 
 		
+		********important notes********
 		[open the spec.yml files then remove only <:ignore> and other irreverent lines, save the files and run below command with --examples]
 		
 		mitmproxy2swagger -i /Downloadf,flows -o spec.yml -p http://127.0.0.1	    -f flow --examples
