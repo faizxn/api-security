@@ -6,6 +6,8 @@
 		its like brute-force and password spraying. to perfrom the attack, need to leverage the information revealed in an excessive data exposure vulnerability.
 		the excess data could reveal technical details about the users account like user is using multifactor authentication.
 
+		capture the login username and password. send it to intruder and check STATUS and LENGTH (if username match length size may vary/change) 
+
 		https://github.com/sc0tfree/mentalist
 		https://github.com/Mebus/cupp
 		https://github.com/rockyou.txt
