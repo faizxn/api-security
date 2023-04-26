@@ -35,3 +35,13 @@
 	# open swagger files to POSTMAN and login using user-credential. set token at TOP of the collection. so that entire session enabled. 
 		send request to show response
 			if any anymaly is observed then send it to BrupSuite.
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
