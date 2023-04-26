@@ -14,9 +14,9 @@
 
 		Way#2
 	
-		mitmweb					||start mtimweb
+		mitmweb				||start mtimweb
 		127.0.0.1:8081 			||open the url with port config proxfoxy		
-		127.0.0.1:8888			||browse the application and check mitmweb to capture traffic
+		127.0.0.1:8888			||browse and access the ENTIRE application and check mitmweb to capture traffic
 			
 		stop capturing and save the file 
 		
