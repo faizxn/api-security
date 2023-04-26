@@ -20,12 +20,15 @@
 		many security controls could prevent you from successfully brute-forcing an API authentication. a technique called "Password Spraying" that can evade.
 		collection username or email address from post-comment which is "excessive-data-exposure"
 				
+				crapi.apisec.ai/community/api/v2/community/posts/recent		|| save all outputs to response.json files then filter for email
+							
 		save the response (below save to file) of post-comment and other targeted files and filter email address using grep
 				grep -oe "[a-zA-Z0-9._]\+@[a-zA-Z]\+.[a-zA-Z]\+" response.json
 		
+		after getting email address, match password with rockyou.txt for brute-force attack.
 			
+	
 		#Note on Base64 Encoding#
-
 			some APIs will base64-encode authentication payloads sent in an API request.
 
 
