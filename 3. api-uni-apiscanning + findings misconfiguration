@@ -1,6 +1,9 @@
 
+
+
 ++ In the current state of API security, which vulnerability do automated scanners detect?
 	-API7:2019 Security Misconfiguration
+
 
 ++ Which of the following fall under API7:2019 Security Misconfiguration?
 	-Verbose Error Messages
@@ -13,13 +16,13 @@
 
 	#Finding Security Misconfigurations#
 	
-	nikto -h http://crapi.apisec.ai
+			nikto -h http://crapi.apisec.ai
 	
 	owasp zap -> automated scan
-	
 	owasp zap -> manual scan
-				login to applcation
-				change and update accrodingly  ->active scan afterward
+				login to applcation and change and update accrodingly  ->active scan afterward
+			
+				thorughly browse the application i.e sign-up and log-in, create update read and delete operation. 
 				
 			# check alert -> find issue carefully 
 			# progess -> below taskbar check active scan and see progess
@@ -27,4 +30,3 @@
 	
 	->do the same thing scaning things with brup
 	
-				
