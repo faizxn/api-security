@@ -1,1 +1,61 @@
 
+	#Mass Assisgnment Attacks
+	
+		mass assignment vulnerablities are present when an attacker is able to overwrite object 
+		properties that they should not be able to. 
+		
+		an attacker is able to add parameters to user registration process that escalate their account from basic to administrator
+			
+		look for parameters involved in user {account properties.. critical functions and administrative actions..}
+		
+			lets intercept the account registration for crAPI and send it to repeater.. 
+				send a sucessful request to have baseline understanding of how API responds..
+				
+			we can add a variable that API providers likely to use  to identify admins. key-values to JSON POST body..
+				
+				"isadmin": true,
+				"admin":1
+				
+		once we attempt to a mass assignment attack on target, we will need to analyze how API reponds.
+
+
+
+	#Fuzzing for Mass Assignment with Param Miner
+
+		right click on a request on registration sign-up page on intercept 
+		
+			select Extentions > Param Miner > Guess Params > Guess JSON Paramter 		|| body is JSON format
+			
+			navigate back to Extender > Extentions and Parm Miner 
+					Next, select the Output tab and wait for results to populate this area
+					
+			If any new parameters is detected, insert them back into the original request and fuzz for results.
+			
+
+			
+	#Other Mass Assignment Vectors#
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		
