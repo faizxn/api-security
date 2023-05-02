@@ -1,1 +1,57 @@
 
+	#BOLA# (Broken Object Level Authorization): 
+	
+		when authorization control are lacking or missing, userA will be able to request userB resorces. 
+		
+		finding resouces ID and request:
+			
+			GET /api/resouces/1
+			GET /user/account/find?user_id=15
+			
+			POST /company/account/Apple/balance		- Goolge
+			POST /admin/pwdreset/account/90
+						
+		#Searching for BOLA
+
+        ask questions like?
+              - what can you do with this app?
+              - do we get own profile?
+              - can we upload files?
+              - do we have account balance?
+              - is there any part of the app that has data specific with you account?
+
+			if we ask those questions about crAPI, we should come up with following:
+			
+				- crAPI design for new vehicle purchases,  it allows user to purchase items, message other users in public forum and update own profile.
+				
+					GET /indentity/api/v2/videos/:id?video_id=123456
+					GET /community/api/v2/community/posts/w4Erxf1
+					GET /identity/api/v2/vehicle/{resouceId}/location
+					
+			
+		#Authorization Testing Strategy:
+		
+		when searching for authorization vulnerablities, the most effective way to find authorization weakness
+		is to create TWO accounts and perform A-B testing.
+		
+			we could do this by using userA resources with userB token.
+			
+		
+		GET /identity/api/v2/vehicle/9431-b75/location   
+		
+			{
+				"carId": "9431-b75"
+				"vehicleLocation": {
+					"id": 1
+				}
+				"fullName": "hapiUserB"
+			}
+		
+    
+    
+ 	#BFLA# (Broken Function Level Authorization): 
+
+    
+    
+	
+		
