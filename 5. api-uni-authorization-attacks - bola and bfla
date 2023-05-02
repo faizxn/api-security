@@ -48,10 +48,30 @@
 			}
 		
     
+    .......................................................................................................................................................
     
- 	#BFLA# (Broken Function Level Authorization): 
 
-    
-    
+	#BOLA# (Broken Function Level Authorization): 
 	
+		is all about performing unauthorization actions. it could lateral (same role)actions or eslated (admin)actions. 
+		main concern is CURD operations.
 		
+		POST /workshop/api/shop/orders/retrun_order?order_id=123456
+		POST /community/api/v2/community/posts/w4Exr4kip2/comment
+		
+	for BFLA, we will perform A-B-A testing. 
+	
+		PUT /community/api/v2/user/video/{{ID}}
+		
+		while uploading video using userA account, replace authrization-token of userB. 
+			and modify the parameters.
+		
+
+		DELTE /community/api/v2/user/video/{{ID}}
+			this is admin function. Try to access the admin API.	
+		
+		DELTE /community/api/v2/admin/video/{{ID}}
+			perform this with admin account. 
+			
+		
+			
