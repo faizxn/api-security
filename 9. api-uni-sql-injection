@@ -1,1 +1,13 @@
 
+	#Injection Attack#
+	
+		they best ways to discover these injection points is by fuzzing and analyzing the reponse we receive.
+			they payloads used for fuzzing includes symbols.. numbers.. systems commands.. sql quries.. emojis.. hexdecimal .. boolean and more.. 
+	
+		we attempt fuzzing against all potential inputs and especially within the following
+		
+			- headers
+			- query string parameters
+			- parameter in post/put requests
+	
+		
