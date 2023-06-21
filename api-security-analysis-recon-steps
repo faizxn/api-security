@@ -1,0 +1,114 @@
+#NMAP#
+
+nmap -sC -sV [target address or network range] -oA nameofoutput
+nmap -sV --script=http-enum <target> -p 80,443,8000,8080
+
+
+#OWASP Amass#
+
+amass enum -list 
+	curl https://raw.githubusercontent.com/OWASP/Amass/master/examples/config.ini >~/.config/amass/config.ini
+	nano ~/.config/amass/config.ini
+
+amass enum -active -d target-name.com |grep api
+amass intel -addr [target IP addresses]
+amass intel -d [target domain] –whois
+
+amass enum -passive -d [target domain]
+amass enum -active -d [target domain]
+ 
+amass enum -active -brute -w /usr/share/wordlists/API_superlist -d [target domain] -dir [directory name]
+ 
+ 
+#Gobuster#
+
+gobuster dir -u target-name.com:8000 -w /home/hapihacker/api/wordlists/common_apis_160
+gobuster dir -u target-name.com:8000 -w /usr/share/wordlists/api_list/common_apis_160 -x 200,202,301 -b 302
+
+
+
+#Kiterunner#
+
+kr scan http://127.0.0.1 -w ~/api/wordlists/data/kiterunner/routes-large.kite
+kr brute http://127.0.0.1 -w ~/api/wordlists/data/automated/nameofwordlist.txt
+kr kb replay "GET 414 [183, 7, 8]://127.0.0.1:8888/api/privatisations/count 0cf6841b1e7ac8badc6e237ab300a90ca873d571" -w ~/api/wordlists/data/kiterunner/routes-large.kite
+
+
+
+#String Terminators#
+
+	null byes and other combination of symbols are often interpreted as string terminators
+		%00
+		0x00
+		//
+		;
+		%
+		!
+		?
+		[]
+string terminators can be placed in different parts of the request like POST request to attemp
+to bypass any restriction in place.
+
+
+#Case Switching#
+
+
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+API Penetrating Testing 
+
+
+Test Cases-
+	(Looking for abnormal HTTP headers, Authentication, IDOR, SSRF, XML Attacks, DOS, Injection Attacks)
+
+
+
++ Scan API first using BrupSuite
+
+-Injection
+		GET /v1/users.php?format=json&token=a'union+select+1,2,version(),4,5,--+ 
+		GET /v1/users.php?format=json&token=a'union+select+1,2,group_concat(table_name),4,5+from+information_schema.tables--
+		
+
+
+		
+API1: BOLA (broken object level authorization)/IDOR   - read
+
+	+objectId - 100, if request for 101,102 get other information
+	
+	  BFLA (broken function level authorization)  - update | delete | post
+	
+	
+	create two users. check using one account resoces to access another account resoces - bola
+	create two users. check using one account resoces to access another account resoces using token-key		- bfla 
+	
+	
+	
+	
+	
+
+API2: Broken User Authentication
+
+	+ 
+	
+API6: Mass Assignment - automatically adding user supplied parameters into object perperites
+
+(permission realated property, process dependent and internal properties)
+
+		when sign-in/up a form extra parameter which are not shown frontside.
+		
+		role: customer, role: admin
+		user.is_admin, user.is_vip	permission-related properties						
+		user.cash should only be set internally after payment verification
+		
+		
+
+		
+		
+		
+	
+	
+
+
