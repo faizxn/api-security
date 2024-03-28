@@ -1,4 +1,32 @@
 
+####Passive-Recon#####
+
+
+#Google Dork
+
+intitle:"api" 		site:coinbase.com
+inurl:"/api/v1/" 	site:coinbase.com
+intitle:json 		site:coinbase.com
+
+
+#Github
+
+coinbase api key
+api key expose 		-commit/issues
+shodan_api_key
+
+extension:json nasa
+"authorization: Bearer"
+filename:swagger.json
+
+#Shodan
+
+"content-type: application/json"
+"wp-json"
+
+
+
+######Active-Recon######
 
 
 #NMAP#
