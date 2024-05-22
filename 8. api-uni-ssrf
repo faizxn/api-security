@@ -1,1 +1,6 @@
 
+- find the all the URL links of SCOPE.
+- check both request and response site, try adding response or request URL parameter into request body.
+
+- add inbound+outbound ssrf links i.e localhost, 127.0.0.1, weebhook.com 
+
